@@ -1,7 +1,7 @@
 Ansible role - NTP client configuration and monitor cronjob
 =====
-[![Build Status](https://travis-ci.org/repleo/ansible-role-postgresql.svg?branch=master)](https://travis-ci.org/repleo/ansible-role-postgresql)
-[![Ansible Galaxy](http://img.shields.io/badge/galaxy-repleo.postgresql-660198.svg?style=flat)](https://galaxy.ansible.com/repleo/postgresql)
+[![Build Status](https://travis-ci.org/repleo/ansible-role-ntp.svg?branch=master)](https://travis-ci.org/repleo/ansible-role-ntp)
+[![Ansible Galaxy](http://img.shields.io/badge/galaxy-repleo.ntp-660198.svg?style=flat)](https://galaxy.ansible.com/repleo/ntp)
 
 This role configures NTP. It also installs a cronjob to check if NTP is still working properly.
 This is mainly an issue when running an NTP client on a virtual machine.
