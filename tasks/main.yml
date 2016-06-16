@@ -1,0 +1,19 @@
+---
+# tasks file for ntp
+
+- name: Install base packages
+  action: apt pkg={{item}} state=present
+  with_items:
+  - ntp
+
+- name: Set the correct timezone
+  file: src={{ ntp_timezone }} dest=/etc/localtime state=link force=yes
+
+- name: Ensure NTP is running and enabled at system start.
+  service: name=ntp state=started enabled=yes
+
+- name: Copy ntp monitor script
+  copy: src=scripts/ntpd_monitor.sh dest=/sbin/ntpd_monitor.sh mode=755
+
+- name: add cronjobs for ntp_monitor
+  cron: name="ntp monitor" user=root minute="*/1" job="/sbin/ntpd_monitor.sh" 
