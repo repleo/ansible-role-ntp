@@ -1,5 +1,6 @@
 Ansible role - NTP client configuration and monitor cronjob
 =====
+
 [![Build Status](https://travis-ci.org/repleo/ansible-role-ntp.svg?branch=master)](https://travis-ci.org/repleo/ansible-role-ntp)
 [![Ansible Galaxy](http://img.shields.io/badge/galaxy-repleo.ntp-660198.svg?style=flat)](https://galaxy.ansible.com/repleo/ntp)
 
