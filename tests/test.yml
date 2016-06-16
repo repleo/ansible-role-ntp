@@ -2,6 +2,6 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - { ansible-role-ntp,
-	ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam
+    - { role: ansible-role-ntp,
+	    ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam
       }
