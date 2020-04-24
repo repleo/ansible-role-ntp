@@ -1,5 +1,5 @@
 ---
-# defaults file for ntp
-
 ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam
 
+# in default cont, the ntp server will reply to time request, disable to reduce chance of being part of DDOS attacks
+ntp_serve_time: true

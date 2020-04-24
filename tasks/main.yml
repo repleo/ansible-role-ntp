@@ -9,6 +9,21 @@
 - name: Set the correct timezone
   file: src={{ ntp_timezone }} dest=/etc/localtime state=link force=yes
 
+- name: Dont allow time serving (client only)
+  replace:
+    path: /etc/ntp.conf
+    regexp: 'noquery limited'
+    replace: 'noquery noserve limited '
+  when: not ntp_serve_time
+
+- name: Allow time serving
+  replace:
+    path: /etc/ntp.conf
+    regexp: 'noquery noserve limited'
+    replace: 'noquery limited '
+  when: not ntp_serve_time
+  when: ntp_serve_time
+
 - name: Ensure NTP is running and enabled at system start.
   service: name=ntp state=started enabled=yes
 
@@ -16,4 +31,4 @@
   copy: src=scripts/ntpd_monitor.sh dest=/sbin/ntpd_monitor.sh mode=755
 
 - name: add cronjobs for ntp_monitor
-  cron: name="ntp monitor" user=root minute="*/1" job="/sbin/ntpd_monitor.sh" 
+  cron: name="ntp monitor" user=root minute="*/1" job="/sbin/ntpd_monitor.sh"

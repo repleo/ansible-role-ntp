@@ -15,7 +15,14 @@ This role requires Ansible 1.4 or higher and platform requirements are listed in
 Role Variables
 --------------
 
-None
+The variables that can be passed to this role and a brief description about
+them are as follows.
+
+    ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam
+
+    # in default cont, the ntp server will reply to time request, disable to reduce chance of being part of DDOS attacks
+    ntp_serve_time: true
+
 
 Dependencies
 ------------
@@ -42,5 +49,3 @@ Author Information
 
 Repleo, Amstelveen, Holland -- www.repleo.nl  
 Jeroen Arnoldus (jeroen@repleo.nl)
-
-
