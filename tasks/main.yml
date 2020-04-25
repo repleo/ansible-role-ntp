@@ -7,7 +7,7 @@
   - ntp
 
 - name: Set the correct timezone
-  file: src={{ ntp_timezone }} dest=/etc/localtime state=link force=yes
+  file: src={{ntp_timezone}} dest=/etc/localtime state=link force=yes
 
 - name: Dont allow time serving (client only)
   replace:
