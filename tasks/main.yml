@@ -2,12 +2,12 @@
 # tasks file for ntp
 
 - name: Install base packages
-  action: apt pkg={{item}} state=present
+  action: apt pkg={{ item }} state=present
   with_items:
   - ntp
 
 - name: Set the correct timezone
-  file: src={{ntp_timezone}} dest=/etc/localtime state=link force=yes
+  file: src={{ ntp_timezone }} dest=/etc/localtime state=link force=yes
 
 - name: Dont allow time serving (client only)
   replace:
