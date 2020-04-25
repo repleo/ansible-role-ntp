@@ -3,5 +3,6 @@
   remote_user: root
   roles:
     - { role: ansible-role-ntp,
-	    ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam
+        ntp_timezone: /usr/share/zoneinfo/Europe/Amsterdam,
+        ntp_serve_time: false
       }

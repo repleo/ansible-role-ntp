@@ -21,7 +21,6 @@
     path: /etc/ntp.conf
     regexp: 'noquery noserve limited'
     replace: 'noquery limited '
-  when: not ntp_serve_time
   when: ntp_serve_time
 
 - name: Ensure NTP is running and enabled at system start.
